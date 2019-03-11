@@ -46,23 +46,23 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="129dp"
+                    android:layout_width="226dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Гнев" />
+                    android:text="Гнев"
+                    android:textSize="28sp" />
 
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="65dp"
+                <Spinner
+                    android:id="@+id/spinner_anger"
+                    android:layout_width="188dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    tools:listitem="@layout/recycler_view_item_2"
-                    tools:spanCount="5"
-                    tools:layoutManager="GridLayoutManager" />
+                    android:spinnerMode="dropdown" />
 
             </LinearLayout>
 
