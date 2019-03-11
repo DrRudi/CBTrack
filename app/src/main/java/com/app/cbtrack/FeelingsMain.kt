@@ -20,8 +20,7 @@ class FeelingsMain : AppCompatActivity() {
         val buttonLock = findViewById<Button>(R.id.toggleButton_lock)
 
         buttonBack.setOnClickListener {
-            val intent = Intent(this@FeelingsMain, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         buttonSave.setOnClickListener {
