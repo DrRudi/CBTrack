@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,10 +12,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button_back_feelings_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Назад" />
@@ -27,7 +27,7 @@
                 android:text="Чувства" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/button_choose_emotion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Выбрать" />
@@ -39,16 +39,16 @@
                 android:text="Описание ситуации" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/editText_emotion"
                 android:layout_width="match_parent"
                 android:layout_height="151dp"
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
             <android.support.v7.widget.RecyclerView
+                tools:listitem="@layout/recycler_view_item_1"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                tools:listitem="@layout/recycler_view_item_1" />
+                android:layout_height="62dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:orientation="horizontal">
 
                 <ToggleButton
-                    android:id="@+id/toggleButton2"
+                    android:id="@+id/toggleButton_lock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,7 +68,7 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button15"
+                    android:id="@+id/button_save_feelings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
