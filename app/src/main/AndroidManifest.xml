@@ -19,6 +19,8 @@
         <activity android:name=".AllNotesActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".NewWordActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".FeelingsMain" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".FeelingsSelection" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".FeelingsInfo" android:theme="@style/AppTheme.NoTitleBar"></activity>
     </application>
 
 </manifest>
