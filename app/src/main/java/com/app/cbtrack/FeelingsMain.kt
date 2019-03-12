@@ -18,6 +18,7 @@ class FeelingsMain : AppCompatActivity() {
         val buttonSave = findViewById<Button>(R.id.button_save_feelings)
         val buttonBack = findViewById<Button>(R.id.button_back_feelings_layout)
         val buttonLock = findViewById<Button>(R.id.toggleButton_lock)
+        val buttonChoose = findViewById<Button>(R.id.button_choose_emotion)
 
         buttonBack.setOnClickListener {
             finish()
@@ -25,6 +26,11 @@ class FeelingsMain : AppCompatActivity() {
 
         buttonSave.setOnClickListener {
 
+        }
+
+        buttonChoose.setOnClickListener {
+            val intent = Intent(this@FeelingsMain, FeelingsSelection::class.java)
+            startActivity(intent)
         }
 
         buttonLock.setOnClickListener {
