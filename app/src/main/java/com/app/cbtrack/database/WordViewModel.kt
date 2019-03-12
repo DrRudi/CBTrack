@@ -25,6 +25,10 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         allWords = repository.allWords
     }
 
+    fun getWordById(wordId: Long): LiveData<Word> {
+        return repository.getWordById(wordId)
+    }
+
     fun insert(word: Word) = scope.launch(Dispatchers.IO) {
         repository.insert(word)
     }
