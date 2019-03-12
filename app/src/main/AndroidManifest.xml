@@ -22,6 +22,9 @@
         <activity android:name=".FeelingsSelection" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".FeelingsInfo" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".NoteActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".ThoughtMain" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".CognitiveInfo" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".CognitiveSelection" android:theme="@style/AppTheme.NoTitleBar"></activity>
     </application>
 
 </manifest>
