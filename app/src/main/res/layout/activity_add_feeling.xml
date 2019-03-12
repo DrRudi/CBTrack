@@ -1,79 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/emotion_text"
+        android:layout_width="58dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Эмоция"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/choose_emotion_b"
+        android:layout_width="89dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Выбрать"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emotion_text" />
 
-            <Button
-                android:id="@+id/button_back_feelings_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Назад" />
+    <Button
+        android:id="@+id/choose_date_b"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="17dp"
+        android:text="Дата"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Чувства" />
+    <TextView
+        android:id="@+id/situation_text"
+        android:layout_width="186dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="23dp"
+        android:text="Описание ситуации"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_emotion_b" />
 
-            <Button
-                android:id="@+id/button_choose_emotion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Выбрать" />
+    <EditText
+        android:id="@+id/edit_situation"
+        android:layout_width="0dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/situation_text" />
 
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Описание ситуации" />
+    <TextView
+        android:id="@+id/tag_text"
+        android:layout_width="58dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:text="Тег"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_situation" />
 
-            <EditText
-                android:id="@+id/editText_emotion"
-                android:layout_width="match_parent"
-                android:layout_height="151dp"
-                android:ems="10"
-                android:inputType="textMultiLine" />
+    <EditText
+        android:id="@+id/edit_tag"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_text" />
 
-            <android.support.v7.widget.RecyclerView
-                tools:listitem="@layout/recycler_view_item"
-                android:layout_width="match_parent"
-                android:layout_height="62dp" />
+    <Button
+        android:id="@+id/save_b"
+        android:layout_width="107dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:text="Сохранить"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_tag" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ToggleButton
-                    android:id="@+id/toggleButton_lock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="ToggleButton" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/button_save_feelings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Сохранить" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="58dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="36dp"
+        android:text="01/01/2019"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_date_b" />
 </android.support.constraint.ConstraintLayout>

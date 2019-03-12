@@ -8,4 +8,13 @@
     <string name="hint_word">Word…</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="test_bd">test bd</string>
+
+    <string-array name="emotions">
+        <item>Грусть</item>
+        <item>Злость</item>
+        <item>Испуг</item>
+        <item>Радость</item>
+        <item>Умиротворение</item>
+    </string-array>
 </resources>

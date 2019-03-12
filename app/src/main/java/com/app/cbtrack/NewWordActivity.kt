@@ -22,7 +22,7 @@ class NewWordActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
-            val word = Word(editWordView.text.toString())
+            val word = Word(null, editWordView.text.toString())
             wordViewModel.insert(word)
             finish()
         }

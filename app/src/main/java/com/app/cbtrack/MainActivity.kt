@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val button1 = findViewById<Button>(R.id.add_feelings_b)
+        val button1 = findViewById<Button>(R.id.test_bd_b)
         button1.setOnClickListener {
             val intent = Intent(this@MainActivity, NewWordActivity::class.java)
             startActivity(intent)
