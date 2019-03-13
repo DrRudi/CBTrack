@@ -9,28 +9,28 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class WordViewModel(application: Application) : AndroidViewModel(application) {
+class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
     private var parentJob = Job()
     private val coroutineContext: CoroutineContext
         get() = parentJob + Dispatchers.Main
     private val scope = CoroutineScope(coroutineContext)
 
-    private val repository: WordRepository
-    val allWords: LiveData<List<Word>>
+    private val repository: NoteRepository
+    val allNotes: LiveData<List<Note>>
 
     init {
-        val wordsDao = WordRoomDatabase.getDatabase(application).wordDao()
-        repository = WordRepository(wordsDao)
-        allWords = repository.allWords
+        val noteDao = NoteDatabase.getDatabase(application).noteDao()
+        repository = NoteRepository(noteDao)
+        allNotes = repository.allNotes
     }
 
-    fun getWordById(wordId: Long): LiveData<Word> {
-        return repository.getWordById(wordId)
+    fun getNoteById(noteId: Long): LiveData<Note> {
+        return repository.getNoteById(noteId)
     }
 
-    fun insert(word: Word) = scope.launch(Dispatchers.IO) {
-        repository.insert(word)
+    fun insert(note: Note) = scope.launch(Dispatchers.IO) {
+        repository.insert(note)
     }
 
     override fun onCleared() {

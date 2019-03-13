@@ -12,7 +12,7 @@ import android.widget.TextView
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ThoughtMain : AppCompatActivity() {
+class AddThoughtActivity : AppCompatActivity() {
 
     private val CHOOSE_EMOTION_REQUEST = 1
     private lateinit var editSituation: EditText
@@ -59,19 +59,19 @@ class ThoughtMain : AppCompatActivity() {
         }
 
         dateButton.setOnClickListener {
-            DatePickerDialog(this@ThoughtMain, dateSetListener,
+            DatePickerDialog(this@AddThoughtActivity, dateSetListener,
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH)).show()
         }
 
         chooseEmotionButton.setOnClickListener {
-            val intent = Intent(this@ThoughtMain, FeelingsSelection::class.java)
+            val intent = Intent(this@AddThoughtActivity, EmotionSelectionActivity::class.java)
             startActivityForResult(intent, CHOOSE_EMOTION_REQUEST)
         }
 
         chooseCognitive.setOnClickListener {
-            val intent = Intent(this@ThoughtMain, CognitiveSelection::class.java)
+            val intent = Intent(this@AddThoughtActivity, CognitiveSelectionActivity::class.java)
             startActivity(intent)
         }
 

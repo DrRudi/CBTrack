@@ -5,23 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/main_text"
-        android:layout_width="426dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/blue"
-        android:text="Мои записи"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/thoughts_notes_button"
         android:layout_width="180dp"

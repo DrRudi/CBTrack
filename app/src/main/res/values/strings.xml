@@ -10,7 +10,7 @@
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="test_bd">test bd</string>
 
-    <string-array name="emotions">
+    <string-array name="notes">
         <item>Грусть</item>
         <item>Злость</item>
         <item>Испуг</item>

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
 
-class FeelingsSelection : AppCompatActivity() {
+class EmotionSelectionActivity : AppCompatActivity() {
 
     private lateinit var emotionSpinner: Spinner
     private lateinit var spinnerButton : Button

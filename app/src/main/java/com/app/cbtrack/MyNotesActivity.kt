@@ -8,11 +8,11 @@ import android.widget.Button
 
 
 @SuppressLint("Registered")
-class MyNotes : AppCompatActivity() {
+class MyNotesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.my_notes_view)
+        setContentView(R.layout.activity_my_notes)
 
         val buttonThoughts = findViewById<Button>(R.id.thoughts_notes_button)
         buttonThoughts.setOnClickListener {
@@ -26,9 +26,10 @@ class MyNotes : AppCompatActivity() {
 
         val buttonAllnotes = findViewById<Button>(R.id.all_notes_button)
         buttonAllnotes.setOnClickListener {
-            val intent = Intent(this@MyNotes, AllNotesActivity::class.java)
+            val intent = Intent(this@MyNotesActivity, AllNotesActivity::class.java)
             startActivity(intent)
         }
+
         val buttonTags = findViewById<Button>(R.id.tags_button)
         buttonTags.setOnClickListener {
             //TODO: go to tags

@@ -1,14 +1,12 @@
 package com.app.cbtrack
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.Spinner
 
-class CognitiveSelection : AppCompatActivity() {
+class CognitiveSelectionActivity : AppCompatActivity() {
 
     private lateinit var checkBox4: CheckBox
     private lateinit var saveCognitive: Button
@@ -26,7 +24,7 @@ class CognitiveSelection : AppCompatActivity() {
 
         }
         infoCognitive.setOnClickListener {
-            val intent = Intent(this@CognitiveSelection, CognitiveInfo::class.java)
+            val intent = Intent(this@CognitiveSelectionActivity, CognitiveInfoActivity::class.java)
             startActivity(intent)
         }
     }
