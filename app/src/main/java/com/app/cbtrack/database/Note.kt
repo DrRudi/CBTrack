@@ -15,4 +15,5 @@ data class Note(
         val situation: String?,
         val date: Date,
         val emotion: String?,
+        val alternative: String?,
         val tags: String?)

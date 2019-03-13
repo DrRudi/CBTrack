@@ -17,4 +17,13 @@
         <item>Радость</item>
         <item>Умиротворение</item>
     </string-array>
+
+    <string-array name="cognitive_notes">
+        <item>1 Искажение</item>
+        <item>2 Искажение</item>
+        <item>3 Искажение</item>
+        <item>4 Искажение</item>
+        <item>5 Искажение</item>
+    </string-array>
+
 </resources>

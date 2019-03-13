@@ -2,6 +2,7 @@ package com.app.cbtrack
 
 import android.app.Activity
 import android.app.DatePickerDialog
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
@@ -9,12 +10,15 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.app.cbtrack.database.Note
+import com.app.cbtrack.database.NoteViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class AddThoughtActivity : AppCompatActivity() {
 
     private val CHOOSE_EMOTION_REQUEST = 1
+    private val CHOOSE_COGNITIVE_REQUEST = 1
     private lateinit var editSituation: EditText
     private lateinit var editThought: EditText
     private lateinit var editInterpretation: EditText
@@ -27,7 +31,7 @@ class AddThoughtActivity : AppCompatActivity() {
     private lateinit var chooseEmotionButton: Button
     private lateinit var chooseCognitive: Button
     private lateinit var saveThought: Button
-
+    private lateinit var noteViewModel: NoteViewModel
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +48,8 @@ class AddThoughtActivity : AppCompatActivity() {
         saveThought = findViewById(R.id.save_thought_button)
 
         val cal = Calendar.getInstance()
+
+        noteViewModel = ViewModelProviders.of(this).get(NoteViewModel::class.java)
 
         val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
@@ -72,11 +78,13 @@ class AddThoughtActivity : AppCompatActivity() {
 
         chooseCognitive.setOnClickListener {
             val intent = Intent(this@AddThoughtActivity, CognitiveSelectionActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, CHOOSE_COGNITIVE_REQUEST)
         }
 
         saveThought.setOnClickListener {
-
+            val note = Note(null, 2, editThought.text.toString(), cognitive, editSituation.text.toString(), cal.time, emotion, editInterpretation.text.toString(), editTag.text.toString())
+            noteViewModel.insert(note)
+            finish()
         }
     }
 
@@ -85,6 +93,10 @@ class AddThoughtActivity : AppCompatActivity() {
 
         if (requestCode == CHOOSE_EMOTION_REQUEST && resultCode == Activity.RESULT_OK) {
             emotion = data?.getStringExtra("emotion")
+        }
+
+        if (requestCode == CHOOSE_COGNITIVE_REQUEST && resultCode == Activity.RESULT_OK) {
+            cognitive = data?.getStringExtra("cognitive")
         }
     }
 }
