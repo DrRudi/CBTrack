@@ -20,6 +20,7 @@
         <activity android:name=".AddEmotionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".EmotionSelectionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".EmotionNoteActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".ThoughtNoteActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".AddThoughtActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".CognitiveInfoActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
         <activity android:name=".CognitiveSelectionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
