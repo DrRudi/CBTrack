@@ -76,7 +76,7 @@ class AddEmotionActivity : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
-            val note = Note(null, editSituation.text.toString(), date, emotion, editTags.text.toString())
+            val note = Note(null, 1, null, null, editSituation.text.toString(), cal.time, emotion, editTags.text.toString())
             noteViewModel.insert(note)
             finish()
         }

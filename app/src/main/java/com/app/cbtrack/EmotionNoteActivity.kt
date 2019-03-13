@@ -33,7 +33,7 @@ class EmotionNoteActivity : AppCompatActivity() {
         noteViewModel.getNoteById(id).observe(this, Observer { note ->
             note?.let {
                 situationText.text = it.situation
-                dateText.text = it.date
+                dateText.text = dateToString(it.date)
                 emotionText.text = it.emotion
                 tagsText.text = it.tags
             }

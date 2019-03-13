@@ -1,4 +1,4 @@
-package com.app.cbtrack.database
+package com.app.cbtrack
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.app.cbtrack.R
+import com.app.cbtrack.database.Note
 
 
 class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
@@ -28,15 +28,14 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val itemView = inflater.inflate(R.layout.activity_all_notes_list_item, parent, false)
+        val itemView = inflater.inflate(R.layout.activity_all_notes_item, parent, false)
         return NoteViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val current = notes[position]
         holder.noteSituation.text = current.situation
-
-        holder.dateItemView.text = current.date
+        holder.dateItemView.text = dateToString(current.date)
     }
 
     internal fun setNotes(notes: List<Note>) {

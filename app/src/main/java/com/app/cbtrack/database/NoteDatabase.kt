@@ -4,6 +4,7 @@ import android.arch.persistence.room.*
 import android.content.Context
 
 @Database(entities = [Note::class], version = 1)
+@TypeConverters(DateTypeConverter::class)
 abstract class NoteDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
