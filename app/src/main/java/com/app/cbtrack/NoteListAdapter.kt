@@ -19,6 +19,7 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var noteSituation: TextView = itemView.findViewById(R.id.situation_text)
         var dateItemView: TextView = itemView.findViewById(R.id.date_text)
+        var itemTypeText: TextView = itemView.findViewById(R.id.item_type)
 
         init {
             itemView.setOnClickListener {
@@ -36,6 +37,7 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
         val current = notes[position]
         holder.noteSituation.text = current.situation
         holder.dateItemView.text = dateToString(current.date)
+        holder.itemTypeText.text = if(current.noteType == 1) "emotion" else "thougth"
     }
 
     internal fun setNotes(notes: List<Note>) {

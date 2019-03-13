@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.app.cbtrack.database.Note
 import com.app.cbtrack.database.NoteViewModel
 
 class AllNotesActivity : AppCompatActivity() {
@@ -22,7 +23,19 @@ class AllNotesActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter.onItemClick = {
-            val intent = Intent(this@AllNotesActivity, EmotionNoteActivity::class.java)
+            lateinit var note: Note
+            val liveNote = noteViewModel.getNoteById(it.id!!).observe(this, Observer { notes ->
+                notes?.let { note = it }
+            })
+
+            lateinit var intent: Intent
+
+            if(note.noteType == 1) {
+                intent = Intent(this@AllNotesActivity, EmotionNoteActivity::class.java)
+            } else {
+                intent = Intent(this@AllNotesActivity, ThoughtNoteActivity::class.java)
+            }
+
             intent.putExtra("id", it.id)
             startActivity(intent)
         }
