@@ -7,9 +7,8 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.view.View
+import android.widget.*
 import com.app.cbtrack.database.Note
 import com.app.cbtrack.database.NoteViewModel
 import java.text.SimpleDateFormat
@@ -33,6 +32,14 @@ class AddThoughtActivity : AppCompatActivity() {
     private lateinit var saveThought: Button
     private lateinit var noteViewModel: NoteViewModel
 
+    private var mAutoCompleteTextView: AutoCompleteTextView? = null
+    private val mCats = arrayOf("Apple", "Book", "Tree", "Sock", "Train", "Blue")
+    private var mList: MutableList<String>? = null
+    private var mAutoCompleteAdapter: ArrayAdapter<String>? = null
+    private var editTags: String? = ""
+    private lateinit var addTag: Button
+    private lateinit var addedTags: TextView
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_thought)
@@ -40,12 +47,31 @@ class AddThoughtActivity : AppCompatActivity() {
         editSituation = findViewById(R.id.editText_situation)
         editThought = findViewById(R.id.editText_auto_thought)
         editInterpretation = findViewById(R.id.editText_alternative_interpretation)
-        editTag = findViewById(R.id.editText_tag_thought)
         dateButton = findViewById(R.id.choose_date_button_thought)
         dateText = findViewById(R.id.editText_date_thought)
         chooseEmotionButton = findViewById(R.id.emotion_choose_button_thought_activity)
         chooseCognitive = findViewById(R.id.cognitive_choose_button)
         saveThought = findViewById(R.id.save_thought_button)
+
+        addTag = findViewById(R.id.add_tag_thought_button)
+        addedTags = findViewById(R.id.tag_textView_thought)
+
+        mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_thought) as AutoCompleteTextView
+        prepareList()
+
+        mAutoCompleteAdapter = ArrayAdapter(this@AddThoughtActivity,
+                android.R.layout.simple_dropdown_item_1line, mList!!)
+
+
+        mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+
+
+        addTag.setOnClickListener {
+            editTags += "#"
+            editTags += mAutoCompleteTextView!!.text.toString()
+            mAutoCompleteTextView!!.setText("")
+            addedTags.text = editTags
+        }
 
         val cal = Calendar.getInstance()
 
@@ -82,10 +108,34 @@ class AddThoughtActivity : AppCompatActivity() {
         }
 
         saveThought.setOnClickListener {
-            val note = Note(null, 2, editThought.text.toString(), cognitive, editSituation.text.toString(), cal.time, emotion, editInterpretation.text.toString(), editTag.text.toString())
+            val note = Note(null, 2, editThought.text.toString(), cognitive, editSituation.text.toString(), cal.time, emotion, editInterpretation.text.toString(), editTags)
             noteViewModel.insert(note)
             finish()
         }
+    }
+
+    private fun prepareList() {
+        mList = ArrayList()
+        for (mCat in mCats) {
+            mList!!.add(mCat)
+        }
+    }
+
+    fun onClick(view: View) {
+        val newAdd = mAutoCompleteTextView!!.text.toString()
+
+        if (!mList!!.contains(newAdd)) {
+            mList!!.add(newAdd)
+
+            // update the autocomplete words
+            mAutoCompleteAdapter = ArrayAdapter(
+                    this@AddThoughtActivity,
+                    android.R.layout.simple_dropdown_item_1line, mList!!)
+
+            mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+        }
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
