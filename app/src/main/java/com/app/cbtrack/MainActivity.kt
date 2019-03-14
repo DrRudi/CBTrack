@@ -1,9 +1,15 @@
 package com.app.cbtrack
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import java.io.BufferedWriter
+import java.io.FileNotFoundException
+import java.io.IOException
+import java.io.OutputStreamWriter
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,5 +34,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddEmotionActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

@@ -28,4 +28,6 @@
         <activity android:name=".AActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 </manifest>

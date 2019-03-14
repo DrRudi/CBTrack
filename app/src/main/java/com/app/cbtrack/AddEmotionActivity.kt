@@ -3,14 +3,17 @@ package com.app.cbtrack
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.app.cbtrack.database.Note
 import com.app.cbtrack.database.NoteViewModel
+import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,13 +33,13 @@ class AddEmotionActivity : AppCompatActivity() {
     private lateinit var noteViewModel: NoteViewModel
 
     private var mAutoCompleteTextView: AutoCompleteTextView? = null
-    private val mCats = arrayOf("Apple", "Book", "Tree", "Sock", "Train", "Blue")
     private var mList: MutableList<String>? = null
     private var mAutoCompleteAdapter: ArrayAdapter<String>? = null
     private var editTags: String? = ""
     private lateinit var addTag: Button
     private lateinit var addedTags: TextView
-
+    private lateinit var reader: BufferedReader
+    private var mTest = listOf<String>()
 
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +59,26 @@ class AddEmotionActivity : AppCompatActivity() {
         addedTags = findViewById(R.id.tag_textView_emotion)
 
         mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_emotion) as AutoCompleteTextView
-        prepareList()
+
+        try {
+            reader = BufferedReader(InputStreamReader(openFileInput("saved_tags")))
+        } catch (e: Exception) {
+            try {
+                val writer = BufferedWriter(OutputStreamWriter(
+                        openFileOutput("saved_tags", Context.MODE_PRIVATE)))
+                writer.write("#Apple")
+                writer.close()
+                reader = BufferedReader(InputStreamReader(openFileInput("saved_tags")))
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+
+        mTest = reader.readLine().split('#')
+        mList = ArrayList()
+        for (mTest in mTest) {
+            mList!!.add(mTest)
+        }
 
         mAutoCompleteAdapter = ArrayAdapter(this@AddEmotionActivity,
                 android.R.layout.simple_dropdown_item_1line, mList!!)
@@ -66,6 +88,18 @@ class AddEmotionActivity : AppCompatActivity() {
 
 
         addTag.setOnClickListener {
+            val newAdd = mAutoCompleteTextView!!.text.toString()
+
+            if (!mList!!.contains(newAdd)) {
+                mList!!.add(newAdd)
+
+                // update the autocomplete words
+                mAutoCompleteAdapter = ArrayAdapter(
+                        this@AddEmotionActivity,
+                        android.R.layout.simple_dropdown_item_1line, mList!!)
+
+                mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+            }
             editTags += "#"
             editTags += mAutoCompleteTextView!!.text.toString()
             mAutoCompleteTextView!!.setText("")
@@ -100,18 +134,18 @@ class AddEmotionActivity : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
+            var s = ""
+            for (i in 0 until mList!!.size) {
+                s += "#" + mList!!.get(i)
+            }
+            saveData("saved_tags", s)
+            Log.d("LOG", "FileCreated")
             val note = Note(null, 1, null, null, editSituation.text.toString(), cal.time, emotion, null, editTags)
             noteViewModel.insert(note)
             finish()
         }
     }
 
-    private fun prepareList() {
-        mList = ArrayList()
-        for (mCat in mCats) {
-            mList!!.add(mCat)
-        }
-    }
 
     fun onClick(view: View) {
         val newAdd = mAutoCompleteTextView!!.text.toString()
@@ -138,8 +172,18 @@ class AddEmotionActivity : AppCompatActivity() {
         }
     }
 
-
-
+    private fun saveData(fileName: String, data: String) {
+        try {
+            val writer = BufferedWriter(OutputStreamWriter(
+                    openFileOutput(fileName, Context.MODE_PRIVATE)))
+            writer.write(data)
+            writer.close()
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 
 
 }
