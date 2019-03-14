@@ -6,22 +6,28 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
+import kotlin.collections.ArrayList
 
 class EmotionSelectionActivity : AppCompatActivity() {
 
-    private lateinit var emotionSpinner: Spinner
-    private lateinit var spinnerButton : Button
+    private lateinit var okButton: Button
+    private val emotionSpinners = ArrayList<Spinner>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_emotion_selection)
 
-        emotionSpinner = findViewById(R.id.emotion_spinner)
-        spinnerButton = findViewById(R.id.emotion_spinner_b)
+        emotionSpinners.add(findViewById(R.id.spinner_sad))
+        emotionSpinners.add(findViewById(R.id.spinner_happy))
+        emotionSpinners.add(findViewById(R.id.spinner_evil))
+        emotionSpinners.add(findViewById(R.id.spinner_sсare))
+        emotionSpinners.add(findViewById(R.id.spinner_сalm))
+        okButton = findViewById(R.id.buttonOk)
 
-        spinnerButton.setOnClickListener {
+        okButton.setOnClickListener {
             val replyIntent = Intent()
-            replyIntent.putExtra("emotion", emotionSpinner.selectedItem.toString())
+//            for (sp in emotionSpinners)
+            replyIntent.putExtra("emotion", emotionSpinners[0].selectedItem.toString())
             setResult(Activity.RESULT_OK, replyIntent)
             finish()
         }
