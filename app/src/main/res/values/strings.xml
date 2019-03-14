@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CBTrack</string>
-    <string name="account">acccount</string>
+    <string name="account">account</string>
     <string name="settings">settings</string>
-    <string name="add_thougths">add thougths</string>
+    <string name="add_thoughts">add thoughts</string>
     <string name="add_feelings">add feelings</string>
     <string name="all_content">all content</string>
     <string name="hint_word">Word…</string>

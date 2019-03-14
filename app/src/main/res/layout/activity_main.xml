@@ -17,7 +17,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="8dp"
         android:text="@string/account"
-        app:layout_constraintBottom_toTopOf="@+id/add_thougths_b"
+        app:layout_constraintBottom_toTopOf="@+id/add_thoughts_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,19 +30,19 @@
         android:layout_marginEnd="202dp"
         android:layout_marginBottom="8dp"
         android:text="@string/settings"
-        app:layout_constraintBottom_toTopOf="@+id/add_thougths_b"
+        app:layout_constraintBottom_toTopOf="@+id/add_thoughts_b"
         app:layout_constraintEnd_toStartOf="@+id/account_b"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/add_thougths_b"
+        android:id="@+id/add_thoughts_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="74dp"
-        android:text="@string/add_thougths"
+        android:text="@string/add_thoughts"
         app:layout_constraintBottom_toTopOf="@+id/add_feelings_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
