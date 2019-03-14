@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CBTrack</string>
-    <string name="account">acccount</string>
+    <string name="account">account</string>
     <string name="settings">settings</string>
-    <string name="add_thougths">add thougths</string>
+    <string name="add_thoughts">add thoughts</string>
     <string name="add_feelings">add feelings</string>
     <string name="all_content">all content</string>
     <string name="hint_word">Word…</string>
@@ -10,12 +10,44 @@
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="test_bd">test bd</string>
 
-    <string-array name="notes">
-        <item>Грусть</item>
-        <item>Злость</item>
-        <item>Испуг</item>
-        <item>Радость</item>
-        <item>Умиротворение</item>
+    <string-array name="notes_sad">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="notes_happy">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="notes_evil">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="notes_scare">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="notes_calm">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string-array name="cognitive_notes">

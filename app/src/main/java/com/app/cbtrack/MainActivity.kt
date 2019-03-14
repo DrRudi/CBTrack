@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val button2 = findViewById<Button>(R.id.add_thougths_b)
+        val button2 = findViewById<Button>(R.id.add_thoughts_b)
         button2.setOnClickListener {
             val intent = Intent(this@MainActivity, AddThoughtActivity::class.java)
             startActivity(intent)
