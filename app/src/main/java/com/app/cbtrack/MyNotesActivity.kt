@@ -32,7 +32,8 @@ class MyNotesActivity : AppCompatActivity() {
 
         val buttonTags = findViewById<Button>(R.id.tags_button)
         buttonTags.setOnClickListener {
-            //TODO: go to tags
+            val intent = Intent(this@MyNotesActivity, AActivity::class.java)
+            startActivity(intent)
         }
     }
 }
