@@ -9,6 +9,10 @@
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="test_bd">test bd</string>
+    <string name="my_notes">Мои записи</string>
+    <string name="thougth_notes">Записи мыслей</string>
+    <string name="emotion_notes">Записи эмоций</string>
+    <string name="tags_notes">Записи по тегам</string>
 
     <string-array name="notes_sad">
         <item>1</item>

@@ -16,16 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".allNotes.AllNotesActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".addNotes.AddEmotionActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".addNotes.EmotionSelectionActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".allNotes.EmotionNoteActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".allNotes.ThoughtNoteActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".addNotes.AddThoughtActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".addNotes.CognitiveInfoActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".addNotes.CognitiveSelectionActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".allNotes.MyNotesActivity" android:theme="@style/CBT_theme"></activity>
-        <activity android:name=".allNotes.AActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".allNotes.AllNotesActivity"></activity>
+        <activity android:name=".addNotes.AddEmotionActivity"></activity>
+        <activity android:name=".addNotes.EmotionSelectionActivity"></activity>
+        <activity android:name=".allNotes.EmotionNoteActivity"></activity>
+        <activity android:name=".allNotes.ThoughtNoteActivity"></activity>
+        <activity android:name=".addNotes.AddThoughtActivity"></activity>
+        <activity android:name=".addNotes.CognitiveInfoActivity"></activity>
+        <activity android:name=".addNotes.CognitiveSelectionActivity"></activity>
+        <activity android:name=".allNotes.MyNotesActivity"></activity>
+        <activity android:name=".allNotes.AActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
