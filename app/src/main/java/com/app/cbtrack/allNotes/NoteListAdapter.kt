@@ -1,6 +1,7 @@
 package com.app.cbtrack.allNotes
 
 import android.content.Context
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +10,14 @@ import android.widget.TextView
 import com.app.cbtrack.R
 import com.app.cbtrack.database.Note
 import com.app.cbtrack.dateToString
+import android.graphics.LightingColorFilter
 
 
 class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notes = emptyList<Note>()
+    var itemColor = context.resources.getDrawable(R.drawable.list_item_border);
 
     var onItemClick: ((Note) -> Unit)? = null
 
@@ -40,6 +43,12 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
         holder.noteSituation.text = current.situation
         holder.dateItemView.text = dateToString(current.date)
         holder.itemTypeText.text = if(current.noteType == 1) "emotion" else "thougth"
+
+//        when(current.emotion)
+//
+//        val filter = LightingColorFilter(Color.BLACK, Color.BLACK)
+//        itemColor.setColorFilter(filter)
+//        holder.itemView.setBackground(itemColor);
     }
 
     internal fun setNotes(notes: List<Note>) {
