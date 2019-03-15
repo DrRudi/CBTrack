@@ -5,8 +5,6 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 
-fun tagsToTag(allTags:String, tag:String) = if (tag in allTags) tag else "#"
-
 @Dao
 interface NoteDao {
     @Query("SELECT * from note_table")

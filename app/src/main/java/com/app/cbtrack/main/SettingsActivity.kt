@@ -1,9 +1,10 @@
-package com.app.cbtrack
+package com.app.cbtrack.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Switch
+import com.app.cbtrack.R
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

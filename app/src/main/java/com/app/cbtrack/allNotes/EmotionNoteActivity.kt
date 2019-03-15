@@ -1,11 +1,13 @@
-package com.app.cbtrack
+package com.app.cbtrack.allNotes
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import com.app.cbtrack.R
 import com.app.cbtrack.database.NoteViewModel
+import com.app.cbtrack.dateToString
 
 class EmotionNoteActivity : AppCompatActivity() {
 

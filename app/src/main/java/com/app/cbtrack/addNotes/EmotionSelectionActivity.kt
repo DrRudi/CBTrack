@@ -1,4 +1,4 @@
-package com.app.cbtrack
+package com.app.cbtrack.addNotes
 
 import android.app.Activity
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Spinner
+import com.app.cbtrack.R
 import kotlin.collections.ArrayList
 
 class EmotionSelectionActivity : AppCompatActivity() {

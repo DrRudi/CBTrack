@@ -1,15 +1,13 @@
-package com.app.cbtrack
+package com.app.cbtrack.main
 
-import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import java.io.BufferedWriter
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.OutputStreamWriter
+import com.app.cbtrack.addNotes.AddEmotionActivity
+import com.app.cbtrack.addNotes.AddThoughtActivity
+import com.app.cbtrack.allNotes.MyNotesActivity
+import com.app.cbtrack.R
 
 class MainActivity : AppCompatActivity() {
 

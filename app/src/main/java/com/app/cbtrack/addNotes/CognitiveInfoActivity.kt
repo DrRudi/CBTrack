@@ -1,9 +1,9 @@
-package com.app.cbtrack
+package com.app.cbtrack.addNotes
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import com.app.cbtrack.R
 
 class CognitiveInfoActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.app.cbtrack
+package com.app.cbtrack.allNotes
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.TextView
+import com.app.cbtrack.R
 import java.io.*
 
 

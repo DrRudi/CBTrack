@@ -1,4 +1,4 @@
-package com.app.cbtrack
+package com.app.cbtrack.allNotes
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.app.cbtrack.R
 import com.app.cbtrack.database.Note
+import com.app.cbtrack.dateToString
 
 
 class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
