@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoTitleBar">
+        android:theme="@style/CBT_theme">
         <activity android:name=".main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,16 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".allNotes.AllNotesActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".addNotes.AddEmotionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".addNotes.EmotionSelectionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".allNotes.EmotionNoteActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".allNotes.ThoughtNoteActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".addNotes.AddThoughtActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".addNotes.CognitiveInfoActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".addNotes.CognitiveSelectionActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".allNotes.MyNotesActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
-        <activity android:name=".allNotes.AActivity" android:theme="@style/AppTheme.NoTitleBar"></activity>
+        <activity android:name=".allNotes.AllNotesActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".addNotes.AddEmotionActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".addNotes.EmotionSelectionActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".allNotes.EmotionNoteActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".allNotes.ThoughtNoteActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".addNotes.AddThoughtActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".addNotes.CognitiveInfoActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".addNotes.CognitiveSelectionActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".allNotes.MyNotesActivity" android:theme="@style/CBT_theme"></activity>
+        <activity android:name=".allNotes.AActivity" android:theme="@style/CBT_theme"></activity>
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

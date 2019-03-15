@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="blue">#0021FF</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="backgroundColor">#9E98C0E5</color>
+    <color name="backgroundColor">#FFFFFF</color>
     <color name="buttonLabel">#d3d3d3</color>
     <color name="black">#000000</color>
+    <color name="titlebarBackgroungColor">#4274A3</color>
+    <color name="statusBarColor">#355D83</color>
 </resources>

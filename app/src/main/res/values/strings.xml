@@ -2,9 +2,9 @@
     <string name="app_name">CBTrack</string>
     <string name="account">account</string>
     <string name="settings">settings</string>
-    <string name="add_thoughts">add thoughts</string>
-    <string name="add_feelings">add feelings</string>
-    <string name="all_content">all content</string>
+    <string name="add_thoughts">Добавить мысли</string>
+    <string name="add_emotions">Добавить эмоции</string>
+    <string name="all_notes">Все записи</string>
     <string name="hint_word">Word…</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>

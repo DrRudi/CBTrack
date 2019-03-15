@@ -1,74 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.cbtrack.main.MainActivity"
     android:background="@color/backgroundColor"
     android:theme="@android:style/Theme.Black.NoTitleBar"
-    >
+    tools:context="com.app.cbtrack.main.MainActivity">
 
-    <Button
-        android:id="@+id/account_b"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/account"
-        app:layout_constraintBottom_toTopOf="@+id/add_thoughts_b"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/titlebarBackgroungColor"
+        android:elevation="6dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <Button
-        android:id="@+id/settings_b"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="202dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/settings"
-        app:layout_constraintBottom_toTopOf="@+id/add_thoughts_b"
-        app:layout_constraintEnd_toStartOf="@+id/account_b"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/settings_b"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/settings_image"
+            android:layout_gravity="start"
+            android:layout_marginStart="30dp"/>
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#F6F6F6"/>
+
+        <Button
+            android:id="@+id/info_b"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/info_image"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <Button
         android:id="@+id/add_thoughts_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/buttons"
+        android:elevation="6dp"
+        android:padding="20dp"
         android:text="@string/add_thoughts"
-        app:layout_constraintBottom_toTopOf="@+id/add_feelings_b"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="false"
+        android:textColor="#F6F6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_emotion_b"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/add_feelings_b"
+        android:id="@+id/add_emotion_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="72dp"
-        android:text="@string/add_feelings"
-        app:layout_constraintBottom_toTopOf="@+id/all_content_b"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:background="@drawable/buttons"
+        android:elevation="6dp"
+        android:padding="20dp"
+        android:text="@string/add_emotions"
+        android:textAllCaps="false"
+        android:textColor="#F6F6F6"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/all_content_b"
+        android:id="@+id/all_notes_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="255dp"
-        android:text="@string/all_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="100dp"
+        android:background="@drawable/buttons"
+        android:elevation="6dp"
+        android:padding="20dp"
+        android:text="@string/all_notes"
+        android:textAllCaps="false"
+        android:textColor="#F6F6F6"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_emotion_b" />
 
 </android.support.constraint.ConstraintLayout>
