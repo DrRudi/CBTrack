@@ -90,21 +90,22 @@ class AddEmotionActivity : AppCompatActivity() {
 
         addTag.setOnClickListener {
             val newAdd = mAutoCompleteTextView!!.text.toString()
+            if (!newAdd.isEmpty()) {
+                if (!mList!!.contains(newAdd)) {
+                    mList!!.add(newAdd)
 
-            if (!mList!!.contains(newAdd)) {
-                mList!!.add(newAdd)
+                    // update the autocomplete words
+                    mAutoCompleteAdapter = ArrayAdapter(
+                            this@AddEmotionActivity,
+                            android.R.layout.simple_dropdown_item_1line, mList!!)
 
-                // update the autocomplete words
-                mAutoCompleteAdapter = ArrayAdapter(
-                        this@AddEmotionActivity,
-                        android.R.layout.simple_dropdown_item_1line, mList!!)
-
-                mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+                    mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+                }
+                editTags += "#"
+                editTags += mAutoCompleteTextView!!.text.toString()
+                mAutoCompleteTextView!!.setText("")
+                addedTags.text = editTags
             }
-            editTags += "#"
-            editTags += mAutoCompleteTextView!!.text.toString()
-            mAutoCompleteTextView!!.setText("")
-            addedTags.text = editTags
         }
 
         val cal = Calendar.getInstance()
