@@ -39,11 +39,13 @@ class MainActivity : AppCompatActivity() {
         allNotesButton = findViewById(R.id.all_notes_b)
 
         infoButton.setOnClickListener {
-            //TODO
+            val intent = Intent(this@MainActivity, InfoActivity::class.java)
+            startActivity(intent)
         }
 
         settingsButton.setOnClickListener {
-            //TODO
+            val intent = Intent(this@MainActivity, SettingsActivity::class.java)
+            startActivity(intent)
         }
 
 
