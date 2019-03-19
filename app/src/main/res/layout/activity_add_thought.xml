@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <ScrollView
@@ -54,6 +54,8 @@
                     android:id="@+id/editText_date_thought"
                     android:layout_width="27dp"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="date"
@@ -113,6 +115,8 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:text="Тег" />
 
@@ -120,19 +124,25 @@
                     android:id="@+id/tag_textView_thought"
                     android:layout_width="333dp"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextView_thought"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:completionThreshold="1"/>
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:completionThreshold="1" />
 
             <Button
                 android:id="@+id/add_tag_thought_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="Tag" />
 
             <TextView
@@ -224,6 +234,8 @@
                     android:id="@+id/toggleButton"
                     android:layout_width="8dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:text="Lock"
                     android:textOff="Unlocked"
@@ -237,6 +249,8 @@
                 <Button
                     android:id="@+id/save_thought_button"
                     android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Сохранить" />
