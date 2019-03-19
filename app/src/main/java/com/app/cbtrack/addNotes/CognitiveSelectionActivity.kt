@@ -13,7 +13,6 @@ class CognitiveSelectionActivity : AppCompatActivity() {
 
     private lateinit var saveCognitive: Button
     private lateinit var infoCognitive: Button
-    private lateinit var cognitiveSpinner: Spinner
     private lateinit var checkBox2: CheckBox
     private lateinit var checkBox3: CheckBox
     private lateinit var checkBox4: CheckBox
@@ -40,7 +39,6 @@ class CognitiveSelectionActivity : AppCompatActivity() {
 
         saveCognitive = findViewById(R.id.save_cognitive_button)
         infoCognitive = findViewById(R.id.cognitive_info_button)
-        cognitiveSpinner = findViewById(R.id.cognitive_spinner)
         checkBox2 = findViewById(R.id.checkBox2)
         checkBox3 = findViewById(R.id.checkBox3)
         checkBox4 = findViewById(R.id.checkBox4)

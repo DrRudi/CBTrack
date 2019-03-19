@@ -41,6 +41,7 @@ class AddEmotionActivity : AppCompatActivity() {
     private lateinit var addedTags: TextView
     private lateinit var reader: BufferedReader
     private var mTest = listOf<String>()
+    private val tagSet = HashSet<String>()
 
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +59,12 @@ class AddEmotionActivity : AppCompatActivity() {
 
         addTag = findViewById(R.id.add_tag_emotion_button)
         addedTags = findViewById(R.id.tag_textView_emotion)
+
+        val dfDate = SimpleDateFormat("dd.MM.yyyy")
+        val c = Calendar.getInstance()
+        val date2 = dfDate.format(c.time)
+
+        dateText.text = date2.toString()
 
         mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_emotion) as AutoCompleteTextView
 
@@ -101,10 +108,13 @@ class AddEmotionActivity : AppCompatActivity() {
 
                     mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
                 }
-                editTags += "#"
-                editTags += mAutoCompleteTextView!!.text.toString()
+                if (!tagSet.contains(newAdd)) {
+                    tagSet.add(newAdd)
+                    editTags += "#"
+                    editTags += newAdd
+                    addedTags.text = editTags
+                }
                 mAutoCompleteTextView!!.setText("")
-                addedTags.text = editTags
             }
         }
 

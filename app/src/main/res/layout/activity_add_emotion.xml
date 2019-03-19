@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="#F6F6F6"
             android:text="Дневник эмоций"
+            android:textColor="#F6F6F6"
             android:textSize="24sp" />
 
     </android.support.v7.widget.Toolbar>
@@ -31,7 +31,7 @@
         android:id="@+id/emotion"
         android:layout_width="105dp"
         android:layout_height="31dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
         android:text="Эмоция"
         android:textColor="@color/black"
@@ -43,7 +43,7 @@
         android:id="@+id/choose_emotion_b"
         android:layout_width="131dp"
         android:layout_height="39dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/buttons"
         android:text="Выбрать"
@@ -54,7 +54,7 @@
 
     <Button
         android:id="@+id/choose_date_b"
-        android:layout_width="114dp"
+        android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
@@ -80,15 +80,15 @@
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView_emotion" />
 
     <EditText
-        android:cursorVisible="false"
         android:id="@+id/edit_situation"
-        android:layout_width="373dp"
-        android:layout_height="186dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:elevation="6dp"
         android:background="@drawable/edit_text_veiw"
+        android:cursorVisible="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,16 +119,13 @@
 
     <TextView
         android:id="@+id/date_text"
-        android:layout_width="92dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:text="01/01/2019"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toEndOf="@+id/emotion"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView_emotion"

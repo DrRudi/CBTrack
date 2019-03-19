@@ -35,6 +35,8 @@
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:text="Как выбрать?"
+                    android:textColor="@color/white"
+                    android:background="@drawable/buttons"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.837"
@@ -49,20 +51,15 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="8dp"
                 android:text="Когнитивные искажения"
-                android:textSize="24sp"
+                android:textSize="26dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.013" />
-
-            <Spinner
-                android:id="@+id/cognitive_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/cognitive_notes" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
@@ -170,7 +167,9 @@
                 android:id="@+id/save_cognitive_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Сохранить" />
+                android:background="@drawable/buttons"
+                android:text="Сохранить"
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 

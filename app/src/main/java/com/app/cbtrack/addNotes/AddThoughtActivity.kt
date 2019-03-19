@@ -43,6 +43,7 @@ class AddThoughtActivity : AppCompatActivity() {
     private lateinit var addedTags: TextView
     private lateinit var reader: BufferedReader
     private var mTest = listOf<String>()
+    private val tagSet = HashSet<String>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +62,12 @@ class AddThoughtActivity : AppCompatActivity() {
         addedTags = findViewById(R.id.tag_textView_thought)
 
         mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_thought) as AutoCompleteTextView
+
+        val dfDate = SimpleDateFormat("dd.MM.yyyy")
+        val c = Calendar.getInstance()
+        val date2 = dfDate.format(c.time)
+
+        dateText.text = date2.toString()
 
 
         try {
@@ -92,21 +99,25 @@ class AddThoughtActivity : AppCompatActivity() {
 
         addTag.setOnClickListener {
             val newAdd = mAutoCompleteTextView!!.text.toString()
+            if (!newAdd.isEmpty()) {
+                if (!mList!!.contains(newAdd)) {
+                    mList!!.add(newAdd)
 
-            if (!mList!!.contains(newAdd)) {
-                mList!!.add(newAdd)
+                    // update the autocomplete words
+                    mAutoCompleteAdapter = ArrayAdapter(
+                            this@AddThoughtActivity,
+                            android.R.layout.simple_dropdown_item_1line, mList!!)
 
-                // update the autocomplete words
-                mAutoCompleteAdapter = ArrayAdapter(
-                        this@AddThoughtActivity,
-                        android.R.layout.simple_dropdown_item_1line, mList!!)
-
-                mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+                    mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
+                }
+                if (!tagSet.contains(newAdd)) {
+                    tagSet.add(newAdd)
+                    editTags += "#"
+                    editTags += newAdd
+                    addedTags.text = editTags
+                }
+                mAutoCompleteTextView!!.setText("")
             }
-            editTags += "#"
-            editTags += mAutoCompleteTextView!!.text.toString()
-            mAutoCompleteTextView!!.setText("")
-            addedTags.text = editTags
         }
 
         val cal = Calendar.getInstance()
