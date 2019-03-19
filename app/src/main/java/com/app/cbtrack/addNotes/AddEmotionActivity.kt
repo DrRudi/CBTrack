@@ -60,7 +60,7 @@ class AddEmotionActivity : AppCompatActivity() {
         addTag = findViewById(R.id.add_tag_emotion_button)
         addedTags = findViewById(R.id.tag_textView_emotion)
 
-        val dfDate = SimpleDateFormat("dd/MM/yyyy")
+        val dfDate = SimpleDateFormat("dd.MM.yyyy")
         val c = Calendar.getInstance()
         val date2 = dfDate.format(c.time)
 
