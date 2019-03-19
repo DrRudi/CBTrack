@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".main.SettingsActivity"></activity>
+        <activity android:name=".main.InfoActivity"></activity>
         <activity android:name=".allNotes.AllNotesActivity"></activity>
         <activity android:name=".addNotes.AddEmotionActivity"></activity>
         <activity android:name=".addNotes.EmotionSelectionActivity"></activity>

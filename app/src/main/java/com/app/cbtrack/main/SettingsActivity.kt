@@ -16,7 +16,7 @@ class SettingsActivity : AppCompatActivity() {
         val apartPgAcs = (R.id.apart_page_access)
         val descriptionAptPg = (R.id.description_apart_page)
         val shareAcs = (R.id.share_access)
-        val mailWndw = (R.id.mail_window)
+//        val mailWndw = (R.id.mail_window)
 
         val buttonShr = findViewById<Button>(R.id.button_share)
         buttonShr.setOnClickListener {

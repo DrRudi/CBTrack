@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/titlebarBackgroungColor"
+        android:elevation="6dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Настройки"
+            android:textColor="#F6F6F6"
+            android:textSize="24sp" />
+
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/description"
         android:layout_width="327dp"
@@ -13,6 +33,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
         android:text="Настройте доступ вашего психолога к вашему дневнику"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,21 +45,26 @@
         android:layout_width="328dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:text="Все записи открыты"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <ToggleButton
         android:id="@+id/apart_page_access"
-        android:layout_width="wrap_content"
-        android:layout_height="59dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="87dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
+        android:background="@drawable/buttons"
         android:text="ToggleButton"
+        android:textColor="#F6F6F6"
+        android:textOff="unlock"
+        android:textOn="lock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/records_access" />
 
@@ -46,12 +72,10 @@
         android:id="@+id/description_apart_page"
         android:layout_width="214dp"
         android:layout_height="78dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="40dp"
         android:text="Вы можете закрывать доступ к отдельной записи на её странице."
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/apart_page_access"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/records_access" />
 
@@ -63,26 +87,12 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:text="Поделиться доступом с психологом:"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_apart_page" />
-
-    <TextView
-        android:id="@+id/mail_window"
-        android:layout_width="331dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/list_item_border"
-        android:gravity="center"
-        android:hint="электронная почта вашего психолога"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/share_access" />
 
     <Button
         android:id="@+id/button_share"
@@ -91,11 +101,28 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/list_item_border"
+        android:shadowColor="@color/black"
         android:text="Поделиться"
+        android:textColor="#F6F6F6"
+        android:background="@drawable/buttons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mail_window" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="344dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="электронная почта вашего психолога"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/share_access" />
 
 </android.support.constraint.ConstraintLayout>

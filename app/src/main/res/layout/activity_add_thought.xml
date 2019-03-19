@@ -4,24 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+=======
+    android:background="@color/backgroundColor"
+>>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
     android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="422dp"
+        android:layout_height="64dp"
+        android:background="@color/titlebarBackgroungColor"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Дневник мыслей"
+            android:textColor="#F6F6F6"
+            android:textSize="24sp" />
+
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="571dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582"
+        tools:layout_editor_absoluteX="6dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="61dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -32,6 +63,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     android:text="Ситуация"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.067"
@@ -48,7 +80,9 @@
                     android:layout_width="29dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Дата" />
+                    android:background="@drawable/buttons"
+                    android:text="Дата"
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/editText_date_thought"
@@ -70,6 +104,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_veiw"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="viewStart"
@@ -86,6 +121,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="Автоматические мысли"
+                android:textColor="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.067"
                 app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +135,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_veiw"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="viewStart"
@@ -113,12 +151,17 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="79dp"
                     android:layout_height="match_parent"
+<<<<<<< HEAD
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+=======
+                    android:layout_margin="10dp"
+>>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                     android:layout_weight="1"
-                    android:text="Тег" />
+                    android:text="Тег"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tag_textView_thought"
@@ -127,32 +170,51 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1" />
+
             </LinearLayout>
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextView_thought"
+<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+=======
+                android:layout_width="310dp"
+                android:layout_height="39dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_veiw"
+                android:baselineAligned="false"
+>>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                 android:completionThreshold="1" />
 
             <Button
                 android:id="@+id/add_tag_thought_button"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Tag" />
+=======
+                android:layout_width="75dp"
+                android:layout_height="38dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/buttons"
+                android:text="Tag"
+                android:textColor="@color/white" />
+>>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Когнитивное искажение"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.07"
                 app:layout_constraintStart_toStartOf="parent"
@@ -161,11 +223,13 @@
             <Button
                 android:id="@+id/cognitive_choose_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/buttons"
                 android:text="Выбрать"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
@@ -179,6 +243,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="Чувства"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.067"
                 app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +256,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/buttons"
                 android:text="Выбрать"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.075"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,6 +272,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="Альтернативная интерпретация"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.07"
                 app:layout_constraintStart_toStartOf="parent"
@@ -213,10 +281,11 @@
             <EditText
                 android:id="@+id/editText_alternative_interpretation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_veiw"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="viewStart"
@@ -234,10 +303,16 @@
                     android:id="@+id/toggleButton"
                     android:layout_width="8dp"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+=======
+                    android:layout_margin="10dp"
+>>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                     android:layout_weight="1"
+                    android:background="@drawable/buttons"
                     android:text="Lock"
+                    android:textColor="@color/black"
                     android:textOff="Unlocked"
                     android:textOn="Locked" />
 
@@ -252,8 +327,11 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:text="Сохранить" />
+                    android:background="@drawable/buttons"
+                    android:text="Сохранить"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </LinearLayout>
