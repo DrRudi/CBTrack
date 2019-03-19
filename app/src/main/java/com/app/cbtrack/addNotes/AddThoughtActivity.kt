@@ -43,6 +43,7 @@ class AddThoughtActivity : AppCompatActivity() {
     private lateinit var addedTags: TextView
     private lateinit var reader: BufferedReader
     private var mTest = listOf<String>()
+    private val tagSet = HashSet<String>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,10 +104,13 @@ class AddThoughtActivity : AppCompatActivity() {
 
                     mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
                 }
-                editTags += "#"
-                editTags += mAutoCompleteTextView!!.text.toString()
+                if (!tagSet.contains(newAdd)) {
+                    tagSet.add(newAdd)
+                    editTags += "#"
+                    editTags += newAdd
+                    addedTags.text = editTags
+                }
                 mAutoCompleteTextView!!.setText("")
-                addedTags.text = editTags
             }
         }
 

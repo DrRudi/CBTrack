@@ -41,6 +41,7 @@ class AddEmotionActivity : AppCompatActivity() {
     private lateinit var addedTags: TextView
     private lateinit var reader: BufferedReader
     private var mTest = listOf<String>()
+    private val tagSet = HashSet<String>()
 
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,10 +102,13 @@ class AddEmotionActivity : AppCompatActivity() {
 
                     mAutoCompleteTextView!!.setAdapter<ArrayAdapter<String>>(mAutoCompleteAdapter)
                 }
-                editTags += "#"
-                editTags += mAutoCompleteTextView!!.text.toString()
+                if (!tagSet.contains(newAdd)) {
+                    tagSet.add(newAdd)
+                    editTags += "#"
+                    editTags += newAdd
+                    addedTags.text = editTags
+                }
                 mAutoCompleteTextView!!.setText("")
-                addedTags.text = editTags
             }
         }
 
