@@ -63,6 +63,12 @@ class AddThoughtActivity : AppCompatActivity() {
 
         mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_thought) as AutoCompleteTextView
 
+        val dfDate = SimpleDateFormat("dd/MM/yyyy")
+        val c = Calendar.getInstance()
+        val date2 = dfDate.format(c.time)
+
+        dateText.text = date2.toString()
+
 
         try {
             reader = BufferedReader(InputStreamReader(openFileInput("saved_tags")))

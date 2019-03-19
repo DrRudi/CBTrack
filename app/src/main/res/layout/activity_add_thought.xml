@@ -71,23 +71,24 @@
 
                 <Button
                     android:id="@+id/choose_date_button_thought"
-                    android:layout_width="29dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttons"
                     android:text="Дата"
                     android:textColor="@color/white" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editText_date_thought"
-                    android:layout_width="27dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="26dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="date"
-                    android:text="01.01.2019" />
+                    android:text="01/01/2019" />
 
             </LinearLayout>
 

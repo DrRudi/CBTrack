@@ -60,6 +60,12 @@ class AddEmotionActivity : AppCompatActivity() {
         addTag = findViewById(R.id.add_tag_emotion_button)
         addedTags = findViewById(R.id.tag_textView_emotion)
 
+        val dfDate = SimpleDateFormat("dd/MM/yyyy")
+        val c = Calendar.getInstance()
+        val date2 = dfDate.format(c.time)
+
+        dateText.text = date2.toString()
+
         mAutoCompleteTextView = findViewById(R.id.autoCompleteTextView_emotion) as AutoCompleteTextView
 
         try {
