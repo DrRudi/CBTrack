@@ -42,7 +42,7 @@ class NoteListAdapter internal constructor(context: Context) : RecyclerView.Adap
         val current = notes[position]
         holder.noteSituation.text = current.situation
         holder.dateItemView.text = dateToString(current.date)
-        holder.itemTypeText.text = if(current.noteType == 1) "emotion" else "thougth"
+        holder.itemTypeText.text = if(current.noteType == 1) "эмоции" else "мысли"
 
 //        when(current.emotion)
 //
