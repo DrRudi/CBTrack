@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-=======
     android:background="@color/backgroundColor"
->>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -153,12 +150,11 @@
                     android:id="@+id/textView"
                     android:layout_width="79dp"
                     android:layout_height="match_parent"
-<<<<<<< HEAD
+
+
+                    android:layout_margin="10dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-=======
-                    android:layout_margin="10dp"
->>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                     android:layout_weight="1"
                     android:text="Тег"
                     android:textColor="@color/black" />
@@ -175,36 +171,25 @@
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextView_thought"
-<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-=======
-                android:layout_width="310dp"
-                android:layout_height="39dp"
-                android:layout_margin="10dp"
                 android:background="@drawable/edit_text_veiw"
                 android:baselineAligned="false"
->>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                 android:completionThreshold="1" />
 
             <Button
                 android:id="@+id/add_tag_thought_button"
-<<<<<<< HEAD
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Tag" />
-=======
                 android:layout_width="75dp"
                 android:layout_height="38dp"
                 android:layout_margin="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/buttons"
                 android:text="Tag"
                 android:textColor="@color/white" />
->>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
 
             <TextView
                 android:id="@+id/textView3"
@@ -303,12 +288,11 @@
                     android:id="@+id/toggleButton"
                     android:layout_width="8dp"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
+
+
+                    android:layout_margin="10dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-=======
-                    android:layout_margin="10dp"
->>>>>>> 3ca92b9fc99861154b5f80947b0a5b33c0b71c8c
                     android:layout_weight="1"
                     android:background="@drawable/buttons"
                     android:text="Lock"
@@ -324,10 +308,10 @@
                 <Button
                     android:id="@+id/save_thought_button"
                     android:layout_width="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttons"
                     android:text="Сохранить"
